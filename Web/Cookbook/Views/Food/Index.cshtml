@@ -198,7 +198,8 @@
             }
             
             var d = new Date();
-            var date = d.getYear() + 1900 + "-" + d.getMonth() + "-" + d.getDay();
+            //var date = d.getYear() + 1900 + "-" + d.getMonth() + "-" + d.getDay();
+			d.setHours(0, 0, 0, 0);
 
             $.ajax({
                 type: "POST",
@@ -209,7 +210,7 @@
                     Hinh: $("#linkHinh").val(),
                     ThoiGianChuanBi: 120,
                     ThoiGianNau: 120,
-                    NgayDang: date,
+                    NgayDang: d,
                     NguyenLieu: $("#txtNguyenLieu").val(),
                     CachLam: $("#txtCachLam").val(),
                     MaNguoiDung: "@HttpContext.Current.User.Identity.Name",
